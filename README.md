@@ -52,10 +52,10 @@ export default function EasyPersistExample() {
 }
 ```
 
-- `createPersist`
+- `createUsePersist`
 
 ```ts
-import { createPersist } from 'react-easy-persist';
+import { createUsePersist } from 'react-easy-persist';
 
 /**
  * common hook, and you can create your own like this
