@@ -1,6 +1,6 @@
 {
   "name": "react-easy-persist",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "suhaotian",
   "repository": {
@@ -13,6 +13,13 @@
   "main": "dist/index.js",
   "module": "dist/react-easy-persist.esm.js",
   "typings": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "persist",
+    "formik",
+    "hooks",
+    "react-native"
+  ],
   "files": [
     "dist"
   ],
