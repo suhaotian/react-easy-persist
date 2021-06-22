@@ -6,12 +6,20 @@
  * @copyright None
  * @last-modified 2021-06-21 15:49:14
  */
-import { createUsePersist } from './createUsePersist';
+import { createUsePersist, Options } from './createUsePersist';
 
 /**
  * common hook, and you can create your own
  */
-export const usePersist = createUsePersist({
+export const usePersist: <T>({
+  namePrefix,
+  encode,
+  decode,
+  debounce,
+  update,
+  getValues,
+  name,
+}: Options<T>) => [Function, boolean] = createUsePersist({
   namePrefix: '@up',
   debounce: 200,
   encode: JSON.stringify,

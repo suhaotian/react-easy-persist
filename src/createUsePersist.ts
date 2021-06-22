@@ -49,7 +49,7 @@ export function createUsePersist(options: CreateOptions) {
     update,
     getValues,
     name,
-  }: Options<T>) {
+  }: Options<T>): [Function, boolean] {
     const initedRef = useRef(false);
     const { getItem, setItem, removeItem } = useAsyncStorage(
       `${namePrefix}${name}`
@@ -80,6 +80,6 @@ export function createUsePersist(options: CreateOptions) {
       removeItem();
     }
 
-    return [clear];
+    return [clear, initedRef.current];
   };
 }

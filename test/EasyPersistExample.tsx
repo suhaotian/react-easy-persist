@@ -3,7 +3,11 @@ import { usePersist } from '../src';
 
 export default function EasyPersistExample() {
   const [count, setCount] = React.useState(0);
-  usePersist({ name: 'countdown', getValues: () => count, update: setCount });
+  const [clear, inited] = usePersist({
+    name: 'countdown',
+    getValues: () => count,
+    update: setCount,
+  });
 
   function onIncrement() {
     setCount(count + 1);
@@ -21,6 +25,10 @@ export default function EasyPersistExample() {
 
       <button onClick={onIncrement}>Increment +1</button>
       <button onClick={onDecrement}>Decrement -1</button>
+
+      <button onClick={() => clear()}>
+        Clear cache{inited ? '(inited)' : ''}
+      </button>
     </div>
   );
 }

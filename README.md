@@ -88,7 +88,7 @@ export default function FormikPersistExample() {
     },
   });
 
-  const [clear] = usePersist({
+  const [clear, inited] = usePersist({
     name: 'formik-example',
     getValues: () => formik.values,
     update: formik.setValues,
@@ -147,7 +147,9 @@ import { usePersist } from '../src';
 
 export default function EasyPersistExample() {
   const [count, setCount] = React.useState(0);
-  usePersist({ name: 'countdown', getValues: () => count, update: setCount });
+  const [clear, inited] = usePersist({ name: 'countdown', getValues: () => count, update: setCount });
+
+  console.log(inited);
 
   function onIncrement() {
     setCount(count + 1);
