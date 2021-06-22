@@ -60,12 +60,14 @@ import { createUsePersist } from 'react-easy-persist';
 /**
  * common hook, and you can create your own like this
  */
-export const usePersist = createUsePersist({
-  namePrefix: '@up',
-  debounce: 200,
-  encode: JSON.stringify,
-  decode: JSON.parse,
-});
+export const usePersist: ReturnType<typeof createUsePersist> = createUsePersist(
+  {
+    namePrefix: '@up',
+    debounce: 200,
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  }
+);
 ```
 
 ## Example:
@@ -147,7 +149,11 @@ import { usePersist } from '../src';
 
 export default function EasyPersistExample() {
   const [count, setCount] = React.useState(0);
-  const [clear, inited] = usePersist({ name: 'countdown', getValues: () => count, update: setCount });
+  const [clear, inited] = usePersist({
+    name: 'countdown',
+    getValues: () => count,
+    update: setCount,
+  });
 
   console.log(inited);
 
