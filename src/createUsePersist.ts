@@ -8,8 +8,7 @@
  */
 
 import { useRef } from 'react';
-import useMount from 'react-use/lib/useMount';
-import useDebounce from 'react-use/lib/useDebounce';
+import { useMount, useDebounceEffect as useDebounce } from 'ahooks';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 export interface CreateOptions {
@@ -65,18 +64,17 @@ export function createUsePersist(options: CreateOptions) {
 
     const values = getValues();
 
-    const [, cancel] = useDebounce(
-      async () => {
+    useDebounce(
+      () => {
         if (initedRef.current) {
-          await setItem(encode(values));
+          setItem(encode(values));
         }
       },
-      debounce,
-      [values]
+      [values],
+      { wait: debounce }
     );
 
     function clear() {
-      cancel();
       removeItem();
     }
 

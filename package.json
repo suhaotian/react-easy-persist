@@ -1,6 +1,6 @@
 {
   "name": "react-easy-persist",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "MIT",
   "author": "suhaotian",
   "repository": {
@@ -31,7 +31,6 @@
   },
   "peerDependencies": {
     "@react-native-async-storage/async-storage": ">=1",
-    "react-use": ">=17",
     "react": ">=16.8"
   },
   "husky": {
@@ -53,7 +52,7 @@
     "husky": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-use": "^17.2.4",
+    "ahooks": "^3.0.0-alpha.9",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.0",
     "typescript": "^4.3.4"

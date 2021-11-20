@@ -14,7 +14,7 @@ yarn add react-easy-persist
 "peerDependencies": {
   // the latest async-stoarge version alread support web
   "@react-native-async-storage/async-storage": ">=1",
-  "react-use": ">=17",
+  "ahooks": ">=3",
   "react": ">=16.8"
 }
 ```
