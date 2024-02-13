@@ -12,7 +12,7 @@ yarn add react-easy-persist
 
 ```json
 "peerDependencies": {
-  // the latest async-stoarge version alread support web
+  // the latest async-stoarge version already supports web
   "@react-native-async-storage/async-storage": ">=1",
   "ahooks": ">=3",
   "react": ">=16.8"
