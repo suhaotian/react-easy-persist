@@ -1,3 +1,5 @@
+<h1 style="color:red">ARCHIVED! Use this now: https://github.com/suhaotian/use-one?tab=readme-ov-file#persist-any-hooks-state</h1>
+
 # React Easy Persist
 
 An easy hook to persist react state, support **web** and **react-native**,
